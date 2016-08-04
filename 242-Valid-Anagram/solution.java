@@ -1,22 +1,24 @@
 public class Solution {
     public boolean isAnagram(String s, String t) {
-        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+        HashMap<Character,Integer> hm = new HashMap<Character,Integer>();
         int slen = s.length();
         int tlen = t.length();
         
         for(int i = 0 ; i < slen ; i++)
         {
-            Integer count = hm.get(s.charAt(i)-'a');
+            char ch = s.charAt(i);
+            Integer count = hm.get(ch);
             if(count == null)
             {
                 count = 0;
             }
-            hm.put(s.charAt(i)-'a',count+1);
+            hm.put(ch,count+1);
         }
         
         for(int i = 0 ; i < tlen ; i++)
         {
-            Integer count = hm.get(t.charAt(i)-'a');
+            char ch = t.charAt(i);
+            Integer count = hm.get(ch);
             if(count == null)
             {
                 return false;
@@ -24,11 +26,11 @@ public class Solution {
             count = count -1;
             if(count <= 0 )
             {
-                hm.remove(t.charAt(i)-'a');
+                hm.remove(ch);
             }
             else
             {
-                hm.put(t.charAt(i)-'a',count);
+                hm.put(ch,count);
             }
         }
         return hm.isEmpty();
