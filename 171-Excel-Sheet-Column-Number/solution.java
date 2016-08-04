@@ -3,9 +3,10 @@ public class Solution {
         int len = s.length();
         //s = s.toLowerCase();
         int ret = 0;
+        char[] chArr = s.toCharArray();
         for(int i = 0 ; i < len ;i++)
         {
-            ret= ret*26 + s.charAt(i)-'A' + 1;
+            ret= ret*26 + chArr[i]-'A' + 1;
         }
         return ret;
     }
