@@ -17,11 +17,10 @@ public class Solution {
         {
             return false;
         }
-        if(p.val==q.val &&
-         isSameTree(p.left,q.left) &&
-         isSameTree(p.right,q.right))
+        if(p.val==q.val)
         {
-            return true;
+         return isSameTree(p.left,q.left) &&
+         isSameTree(p.right,q.right);
         }
         return false;
     }
