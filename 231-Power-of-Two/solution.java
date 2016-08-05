@@ -4,7 +4,6 @@ public class Solution {
         {
             return false;
         }
-        n = Math.abs(n);
         if((0==(n&(n-1))))
         {
             return true;
