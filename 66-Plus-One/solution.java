@@ -1,41 +1,22 @@
 public class Solution {
     public int[] plusOne(int[] digits) {
         int len = digits.length;
-        int carry = 0;
-        if(len == 0)
+        if(len == 0 )
         {
             return digits;
         }
-        
-        digits[len-1] +=1;
-        
-        if(len ==1)
+        for(int i = len-1;i>=0;i--)
         {
-            if(digits[0]==10)
+            if(digits[i]<9)
             {
-                return new int[]{1,0};
+                digits[i]++;
+                return digits;
             }
-            return digits;
+            digits[i] = 0;
         }
-        for(int i = len-2 ; i>=0 ; i--)
-        {
-            if(digits[i+1]==10)
-            {
-                digits[i+1] = 0;
-                digits[i] += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-        if(digits[0]==10)
-        {
-            int[] arr = Arrays.copyOf(digits,len+1);
-                Arrays.fill(arr,0);
-                arr[0] =1;
-                return arr;
-        }
-        return digits;
+        int[] arr = new int[len+1];
+        Arrays.fill(arr,0);
+        arr[0]=1;
+        return arr;
     }
 }
