@@ -1,15 +1,20 @@
 public class Solution {
     public int rob(int[] nums) {
-        int[] arrays = Arrays.copyOf(nums,nums.length);
         int maxAmt = 0;
-        for(int i = 0 ; i < nums.length ;++i)
+        if(nums.length == 0)
         {
-            for(int j = 0 ; j < i-1 ; j++)
-            {
-                arrays[i] = Math.max(arrays[i],nums[i]+arrays[j]);
-            }
-            maxAmt = Math.max(maxAmt,arrays[i]);
+            return 0;
         }
-        return maxAmt;
+        if(nums.length ==1)
+        {
+            return nums[0];
+        }
+        nums[1] = Math.max(nums[1],nums[0]);
+        
+        for(int i = 2 ; i < nums.length ;++i)
+        {
+            nums[i] = Math.max(nums[i]+nums[i-2],nums[i-1]);
+        }
+        return Math.max(nums[nums.length-1],nums[nums.length-2]);
     }
 }
