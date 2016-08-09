@@ -3,31 +3,27 @@ public class Solution {
         int len = secret.length();
         int[] a = new int[10];
         Arrays.fill(a,0);
-        for(int i = 0 ; i < len ; i++)
+        int A = 0 ; int B = 0;
+        for(int i = 0 ; i < len ; i ++)
         {
-            int place = secret.charAt(i)-'0';
-            a[place]++;
-        }
-        int A = 0 ; int B = 0 ;
-        for(int i = 0 ; i < len ; i++)
-        {
-            if(secret.charAt(i)==guess.charAt(i))
+            int s = secret.charAt(i)-'0';
+            int g = guess.charAt(i)-'0';
+            if(s==g)
             {
-                if(a[guess.charAt(i)-'0']>0)
-                {
-                    a[secret.charAt(i)-'0']--;
-                    
-                }
-                else
-                {
-                    B--;
-                }
                 A++;
             }
-            else if(a[guess.charAt(i)-'0']>0)
+            else
             {
-                a[guess.charAt(i)-'0']--;
-                B++;
+                if(a[s]<0)
+                {
+                    B++;
+                }
+                if(a[g]>0)
+                {
+                    B++;
+                }
+                a[s]++;
+                a[g]--;
             }
         }
         return A+"A"+B+"B";
