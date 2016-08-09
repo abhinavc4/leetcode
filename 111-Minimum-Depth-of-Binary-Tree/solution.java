@@ -13,10 +13,10 @@ public class Solution {
         {
             return 0;
         }
-        return mDep(root,1,Integer.MAX_VALUE);       
+        return mDep(root,1);       
     }
     
-    public int mDep(TreeNode root , int h , int m)
+    public int mDep(TreeNode root , int h)
     {
         if(root == null)
         {
@@ -30,20 +30,13 @@ public class Solution {
         int rmin = Integer.MAX_VALUE;
         if(null!=root.left)
         {
-            lmin = mDep(root.left,h+1,m);
+            lmin = mDep(root.left,h+1);
         }
         if(null!=root.right)
         {
-            rmin = mDep(root.right,h+1,m);
+            rmin = mDep(root.right,h+1);
         }
-        if(lmin == 0)
-        {
-            return rmin;
-        }
-        if(rmin ==0 )
-        {
-            return lmin;
-        }
+        
         return Math.min(lmin,rmin);
     }
 }
