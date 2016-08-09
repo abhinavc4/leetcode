@@ -3,15 +3,7 @@ class MyQueue {
     Deque<Integer> stackOne = new LinkedList<Integer>();
     Deque<Integer> stackTwo = new LinkedList<Integer>();
     public void push(int x) {
-        
-        if(stackTwo.size()==0)
-        {
-            stackOne.addFirst(x);
-        }
-        else
-        {
-            stackOne.addFirst(x);
-        }
+        stackOne.addFirst(x);
     }
 
     // Removes the element from in front of queue.
