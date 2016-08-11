@@ -32,12 +32,6 @@ Test cases had been added to test the overflow behavior.
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Apple](/company/apple/) [Bloomberg](/company/bloomberg/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Math](/tag/math/)</span></div>
