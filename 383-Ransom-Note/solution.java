@@ -3,6 +3,8 @@ public class Solution {
         HashMap<Character,Integer> magMap = new HashMap<Character,Integer>();
         int rLen = ransomNote.length();
         int mLen = magazine.length();
+        char [] chRansom = ransomNote.toCharArray();
+        char [] chMag = magazine.toCharArray();
         if(rLen == 0)
         {
             return true;
@@ -11,9 +13,8 @@ public class Solution {
         {
             return false;
         }
-        for(int i = 0 ; i < mLen ; i++)
+        for(char ch : chMag)
         {
-            char ch = magazine.charAt(i);
             Integer val = magMap.get(ch);
             if(val == null)
             {
@@ -21,9 +22,8 @@ public class Solution {
             }
             magMap.put(ch,val+1);
         }
-        for(int i = 0 ; i < rLen ; i++)
+        for(char ch : chRansom)
         {
-            char ch = ransomNote.charAt(i);
             Integer val = magMap.get(ch);
             if(val == null)
             {
