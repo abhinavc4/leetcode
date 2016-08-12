@@ -23,7 +23,7 @@ public class Solution {
             {
                 break;
             }
-            for(int i = curr +a[curr]; i < n && i>0 ; i = i+a[curr])
+            for(int i = curr +a[curr]; i < n ; i = i+a[curr])
             {
                 a[i]=-1;
             }
