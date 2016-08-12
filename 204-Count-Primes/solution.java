@@ -1,31 +1,29 @@
 public class Solution {
     public int countPrimes(int n) {
-        n--;
         if(n<=1)
         {
             return 0;
         }
-        int[] a = new int[n];
-        for(int i =0 ; i < n ; i++)
+        boolean [] a = new boolean[n];
+        for(int i =2 ; i < n ; i++)
         {
-            a[i] = i+1;
+            a[i] = true;
         }
-        a[0]=-1;
         for(int curr = 0 ; curr*curr <= n ; curr++)
         {
-            if(a[curr] == -1)
+            if(a[curr] == false)
             {
                 continue;
             }
-            for(int i = curr +a[curr]; i < n ; i = i+a[curr])
+            for(int i = curr*curr; i < n ; i = i+curr)
             {
-                a[i]=-1;
+                a[i]=false;
             }
         }
         int count = 0;
-        for(int i : a)
+        for(boolean i : a)
         {
-            if(i!=-1)
+            if(i==true)
             {
                 count++;
             }
