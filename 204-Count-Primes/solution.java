@@ -6,7 +6,7 @@ public class Solution {
         {
             a[i] = true;
         }
-        for(int curr = 2 ; curr*curr <= n ; curr++)
+        for(int curr = 2 ; curr*curr < n ; curr++)
         {
             if(a[curr] == false)
             {
