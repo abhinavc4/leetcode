@@ -13,21 +13,16 @@ public class Solution {
         a[0]=-1;
         int curr = 0;
         int root = (int)Math.sqrt(n);
-        while(curr <= root)
+        for(curr = 0 ; curr <= root ; curr++)
         {
-            while(curr<=root && a[curr]==-1)
+            if(a[curr] == -1)
             {
-                curr++;
-            }
-            if(curr > root)
-            {
-                break;
+                continue;
             }
             for(int i = curr +a[curr]; i < n ; i = i+a[curr])
             {
                 a[i]=-1;
             }
-            curr++;
         }
         int count = 0;
         for(int i : a)
