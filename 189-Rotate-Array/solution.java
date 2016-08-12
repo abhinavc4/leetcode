@@ -1,52 +1,21 @@
 public class Solution {
     public void rotate(int[] nums, int k) {
         int count = nums.length;
-        if(k<=0)
+        k = k%count;
+        for(int start = 0 ;count>0 ;start++)
         {
-            return;
-        }
-        if(count==0 || count==1)
-        {
-            return;
-        }
-        if(count == k)
-        {
-            return;
-        }
-        int i = 0 ;
-        int otherB = nums[i];
-        int maxElem = Integer.MIN_VALUE;
-        for(int j = 0 ; j < count ; j++)
-        {
-            maxElem = Math.max(nums[j],maxElem);
-        }
-        int len = nums.length;
-        while(count>0)
-        {
-            count--;
-            int dElem = 0;
-            while(nums[(dElem = (i+k)%len)]>maxElem)
+            int current = start;
+            int prev = nums[start];
+            do
             {
-                if(i<len)
-                {
-                    i++;
-                    otherB = nums[i];
-                }
-                else
-                {
-                    i = 0;
-                }
-            }
-            int backup = nums[dElem];
-            nums[dElem] = maxElem+1+otherB;
-            i = dElem;
-            otherB = backup;
-        }
-        for(int j = 0 ; j < len ; j++)
-        {
-            nums[j]-=(maxElem+1);
+                int next = (start+k)%nums.length;
+                int temp = nums[next];
+                nums[next] = prev;
+                prev = temp;
+                start = next;
+                count--;       
+            }while(current!=start);
         }
         return;
-        
     }
 }
