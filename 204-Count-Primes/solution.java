@@ -1,15 +1,12 @@
 public class Solution {
     public int countPrimes(int n) {
-        if(n<=1)
-        {
-            return 0;
-        }
+        
         boolean [] a = new boolean[n];
         for(int i =2 ; i < n ; i++)
         {
             a[i] = true;
         }
-        for(int curr = 0 ; curr*curr <= n ; curr++)
+        for(int curr = 2 ; curr*curr <= n ; curr++)
         {
             if(a[curr] == false)
             {
