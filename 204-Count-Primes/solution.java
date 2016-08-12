@@ -11,9 +11,7 @@ public class Solution {
             a[i] = i+1;
         }
         a[0]=-1;
-        int curr = 0;
-        int root = (int)Math.sqrt(n);
-        for(curr = 0 ; curr <= root ; curr++)
+        for(int curr = 0 ; curr*curr <= n ; curr++)
         {
             if(a[curr] == -1)
             {
