@@ -2,7 +2,8 @@ public class Logger {
     Map<String,Integer> hm = null;
     /** Initialize your data structure here. */
     public Logger() {
-        hm = Collections.synchronizedMap(new HashMap<String,Integer>());
+        //hm = Collections.synchronizedMap(new HashMap<String,Integer>());
+        hm = new HashMap<String,Integer>();
     }
     
     /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
