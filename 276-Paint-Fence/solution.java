@@ -20,7 +20,6 @@ public class Solution {
         a[3] = (k-1)*(a[1]+a[2]);
         a[1] = a[2];
         a[2] = a[3];
-        
     }
     return a[3];
     }
