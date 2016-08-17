@@ -15,24 +15,14 @@ public class Solution extends Reader4 {
         }
         int len = buf.length;
         char[] a = new char[4];
-        int numOfCharsRead = 0;
-        for(index = 0; index<n;)
+        int numOfCharsRead = 4;
+        for(index = 0; index<n && numOfCharsRead == 4 ;)
         {
             numOfCharsRead = read4(a);
-            for(int i = 0 ;  ; )
+            int i = 0 ;
+            while(i < numOfCharsRead && index < n)
             {
-                if(i < numOfCharsRead && index < n)
-                {
-                    buf[index++] = a[i++];    
-                }
-                else
-                {
-                    break;
-                }
-            }
-            if(numOfCharsRead != 4)
-            {
-                break;
+                buf[index++] = a[i++];    
             }
         }
         return index;
