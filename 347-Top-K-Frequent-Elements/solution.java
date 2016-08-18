@@ -7,44 +7,38 @@ public class Solution {
             return l;    
         }
         HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
-        TreeMap<Integer,TreeSet<Integer>> tm = new TreeMap<Integer,TreeSet<Integer>>();
+        TreeMap<Integer,TreeSet<Integer>> tm = new TreeMap<Integer,TreeSet<Integer>>(Collections.reverseOrder());
         for(int i : nums)
         {
             Integer count = hm.get(i);
             if(count!=null)
             {
-                TreeSet<Integer> al = tm.get(count);
                 hm.put(i, count+1);
-                if(al == null)
+                
+                TreeSet<Integer> al = tm.get(count);
+                al.remove(new Integer(i));
+                if(al.size()==0)
                 {
-                    al = new TreeSet<Integer>();
-                    al.add(i);
-                    tm.put(count,al);
+                    tm.remove(count);
                 }
                 else
                 {
-                    al.remove(new Integer(i));
-                    if(al.size()==0)
-                    {
-                        tm.remove(count);
-                    }
-                    else
-                    {
-                        tm.put(count,al);
-                    }
-                    TreeSet<Integer> alNew = tm.get(count+1);
-                    if(alNew == null)
-                    {
-                        alNew = new TreeSet<Integer>();
-                    }
-                    alNew.add(i);
-                    tm.put(count+1,alNew);
+                    tm.put(count,al);
                 }
+                
+                TreeSet<Integer> alNew = tm.get(count+1);
+                if(alNew == null)
+                {
+                    alNew = new TreeSet<Integer>();
+                }
+                alNew.add(i);
+                tm.put(count+1,alNew);
             }
             else
             {
                 count = new Integer(0);
                 hm.put(i,count);
+                
                 TreeSet<Integer> al = tm.get(count);
                 if(al == null)
                 {
@@ -58,15 +52,17 @@ public class Solution {
         int numRem = k;
         while(numRem>0)
         {
-            TreeSet<Integer> temp = (tm.pollLastEntry()).getValue();
-            numRem-=temp.size();
-            if(l.size()<k)
+            for(Map.Entry<Integer,TreeSet<Integer>> a : tm.entrySet())
             {
-                l.addAll(temp);
-            }
-            while(l.size()>k)
-            {
-                l.remove(l.size()-1);
+                numRem-=a.getValue().size();
+                if(l.size()<k)
+                {
+                    l.addAll(a.getValue());
+                }
+                while(l.size()>k)
+                {
+                    l.remove(l.size()-1);
+                }
             }
         }
         return l;
