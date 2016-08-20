@@ -30,11 +30,6 @@ public class Solution {
         {
             return 0;
         }
-        if(headOne.next==null)
-        {
-            return headOne.val;
-        }
-        System.out.println(val+" " + count);
         ListNode node = headOne;
         while(val>0 && node!=null)
         {
