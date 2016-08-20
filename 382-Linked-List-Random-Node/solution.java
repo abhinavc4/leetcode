@@ -14,29 +14,24 @@ public class Solution {
         Random r = null;
         ListNode headOne = null;
     public Solution(ListNode head) {
-        ListNode node = head;
         headOne = head;
-        while(node!=null)
-        {
-            count++;
-            node = node.next;
-        }
         r = new Random();
     }
     /** Returns a random node's value. */
     public int getRandom() {
-        int val = r.nextInt(count);
-        if(headOne == null)
+        ListNode p = headOne;
+        int count = 1;
+        int result = 0;
+        while(p!=null)
         {
-            return 0;
+            if(r.nextInt(count)==0)
+            {
+                result = p.val;
+            }
+            p = p.next;
+            count++;
         }
-        ListNode node = headOne;
-        while(val>0 && node!=null)
-        {
-            node = node.next;
-            val--;
-        }
-        return node.val;
+        return result;
     }
 }
 
