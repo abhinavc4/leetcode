@@ -17,10 +17,6 @@ public class Solution {
         }
         for(int j = i ; j <=n;j++)
         {
-            if(al.contains(j))
-            {
-                continue;
-            }
             al.add(j);
             helper(n,k,j+1,al,l);
             al.remove(al.size()-1);
