@@ -11,12 +11,6 @@ Return `1` since the palindrome partitioning `["aa","b"]` could be produced usin
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Dynamic Programming](/tag/dynamic-programming/)</span></div>
