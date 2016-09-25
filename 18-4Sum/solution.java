@@ -8,7 +8,8 @@ public class Solution {
         {
             return res;
         }
-        int max =nums[len];
+
+        int max = nums[len];
         
         for(int i = 0 ; i < len ; i++)
         {
@@ -24,7 +25,7 @@ public class Solution {
     {
         int z2;
         int max = nums[end];
-        for(int i = begin ; i <end-1 ; i++)
+        for(int i = begin ; i <end ; i++)
         {
             if(i>begin && nums[i]==nums[i-1])
             {
