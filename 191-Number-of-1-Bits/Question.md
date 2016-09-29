@@ -17,6 +17,12 @@ Special thanks to [@ts](https://oj.leetcode.com/discuss/user/ts) for adding this
 
 <div>
 
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+
+<span class="hidebutton">[Apple](/company/apple/) [Microsoft](/company/microsoft/)</span></div>
+
+<div>
+
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Bit Manipulation](/tag/bit-manipulation/)</span></div>
@@ -25,4 +31,4 @@ Special thanks to [@ts](https://oj.leetcode.com/discuss/user/ts) for adding this
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(E) Reverse Bits](/problems/reverse-bits/) [(E) Power of Two](/problems/power-of-two/) [(M) Counting Bits](/problems/counting-bits/)</span></div>
+<span class="hidebutton">[(E) Reverse Bits](/problems/reverse-bits/) [(E) Power of Two](/problems/power-of-two/) [(M) Counting Bits](/problems/counting-bits/) [(E) Binary Watch](/problems/binary-watch/)</span></div>
