@@ -27,12 +27,12 @@ solution.getRandom();
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Google](/company/google/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Reservoir Sampling](/tag/reservoir-sampling/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+
+<span class="hidebutton">[(M) Random Pick Index](/problems/random-pick-index/)</span></div>
