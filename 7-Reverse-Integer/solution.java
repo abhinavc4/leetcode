@@ -7,7 +7,6 @@ public class Solution {
             isNeg = true;
             x = x*-1;
         }
-        int numOfDigs = (int)Math.log10(x);
         while(x>0)
         {
             if(sum>Integer.MAX_VALUE/10)
@@ -18,9 +17,6 @@ public class Solution {
             sum = sum*10+temp;
             x = x/10;
         }
-        
-        
-        
         if(isNeg)
         {
             sum = sum*-1;
