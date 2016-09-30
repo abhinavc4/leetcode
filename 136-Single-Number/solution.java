@@ -5,8 +5,8 @@ public class Solution {
         {
             return 0;
         }
-        int res = nums[0];
-        for(int i =1 ; i < len ; i++)
+        int res = 0;
+        for(int i =0 ; i < len ; i++)
         {
             res ^= nums[i];
         }
