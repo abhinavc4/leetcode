@@ -9,10 +9,10 @@ public class Solution {
         {
             str.append("-");
         }
-        Long divisor = Math.abs(Long.valueOf(numerator));
-        Long dividend = Math.abs(Long.valueOf(denominator));
-        str.append(String.valueOf(divisor/dividend));
-        Long remainder = divisor % dividend;
+        Long dividend = Math.abs(Long.valueOf(numerator));
+        Long divisor = Math.abs(Long.valueOf(denominator));
+        str.append(String.valueOf(dividend/divisor));
+        Long remainder = dividend % divisor;
         if(remainder == 0)
         {
             return str.toString();
@@ -29,8 +29,8 @@ public class Solution {
             }
             hm.put(remainder,str.length());
             remainder*=10;
-            str.append(String.valueOf(remainder/dividend));
-            remainder %= dividend;
+            str.append(String.valueOf(remainder/divisor));
+            remainder %= divisor;
         }
         return str.toString();
     }
