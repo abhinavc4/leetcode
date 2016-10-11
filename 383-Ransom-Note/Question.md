@@ -16,9 +16,9 @@ canConstruct("aa", "aab") -> true
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+[Subscribe](/subscribe/) to see which companies asked this question
 
-<span class="hidebutton">[Apple](/company/apple/)</span></div>
+</div>
 
 <div>
 
